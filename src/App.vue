@@ -1,15 +1,27 @@
 <template>
-  <img alt="Lucas De Oliveira" src="./assets/photo.jpg">
+  <Navbar />
   <Banner />
+  <SectionPortfolio title="Portfolio"/>
+  <SectionAbout title="About"/>
+  <SectionContact title="Contact"/>
 </template>
 
 <script>
-import Banner from './components/Banner.vue'
+import Banner from './components/Banner.vue';
+import SectionPortfolio from './components/SectionPortfolio.vue';
+import SectionAbout from './components/SectionAbout.vue';
+import SectionContact from './components/SectionContact.vue';
+import Navbar from './components/Navbar.vue';
+
 
 export default {
   name: 'App',
   components: {
-    Banner
+    Banner,
+    SectionPortfolio,
+    SectionAbout,
+    SectionContact,
+    Navbar
   }
 }
 </script>
@@ -21,6 +33,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
