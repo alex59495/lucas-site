@@ -64,8 +64,5 @@ export default {
     width   : 50%;  /* or 100px */
     border-bottom: 2px solid black;
   }
-
-  .section {
-    min-height: 100vh;
-  }
+  
 </style>

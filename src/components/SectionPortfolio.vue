@@ -12,8 +12,13 @@
         <div class="video-list">
           <div class="card-video" v-for="(video, index) in videos" :key="video.url" v-on:click=updateVideoPreview(index)>
             <img :src="require('@/assets/' + video.image)" :alt="video.image">
-            <div class="video-title">
-              {{video.name}}
+            <div class="video-content">
+              <div class="video-title">
+                {{video.name}}
+              </div>
+              <div class="video-description">
+                {{video.description}}
+              </div>
             </div>
           </div>
         </div>
@@ -79,6 +84,7 @@ export default {
 
 .musics {
     font-weight: 700;
+    margin-bottom: 30px;
   }
 
   @media( max-width: 991px) {
@@ -104,7 +110,7 @@ export default {
   }
 
   .card-video {
-    margin: 10px 0;
+    margin: 10px 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -117,13 +123,32 @@ export default {
     width: 90%;
   }
 
+  .video-content {
+    text-align: left;
+    margin: 10px 10px;
+  }
+
   .video-title {
-    align-self: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .video-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   .container-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 400px;
   }
 
   @media (max-width: 991px) {
@@ -134,7 +159,6 @@ export default {
 
   .section {
     margin: 50px 10%;
-    min-height: 100vh;
   }
 
   .card-video:hover {

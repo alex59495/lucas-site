@@ -16,7 +16,7 @@
       <SkillPreview :skill="skill" />
     </div>
     <p>-</p>
-    <p>Lucas De Oliveira</p>
+    <p class='bold-700'>Lucas De Oliveira</p>
   </div>
 </template>
 
@@ -93,6 +93,11 @@ export default {
     }
   }
 
+  .bold-700 {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
   .skill {
     text-align: center;
     padding: 8px;
@@ -118,7 +123,6 @@ export default {
     padding: 50px 10%;
     background-color: black;
     color: white;
-    min-height: 100vh;
   }
 
   .title {

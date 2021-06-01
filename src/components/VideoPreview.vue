@@ -37,7 +37,7 @@ export default {
   }
 
   .description {
-    margin: 30px 20px;
+    margin: 30px 50px;
     font-style: italic;
   }
 </style>
