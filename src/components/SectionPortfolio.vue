@@ -9,8 +9,8 @@
       </div>
       <div class="list">
         <div class="musics">My musics</div>
-        <div class="video-list" v-for="(video, index) in videos" :key="video.url">
-          <div class="card-video" v-on:click=updateVideoPreview(index)>
+        <div class="video-list">
+          <div class="card-video" v-for="(video, index) in videos" :key="video.url" v-on:click=updateVideoPreview(index)>
             <img :src="require('@/assets/' + video.image)" :alt="video.image">
             <div class="video-title">
               {{video.name}}
@@ -60,6 +60,45 @@ export default {
 
 <style scoped>
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(34, 34, 34);
+}
+
+.musics {
+    font-weight: 700;
+  }
+
+  @media( max-width: 991px) {
+    .musics {
+      margin-top: 30px;
+    }
+  }
+
+  .video-list {
+    max-height: 500px;
+    overflow: auto;
+  }
+
+  @media( max-width: 991px) {
+    .video-list {
+      max-height: 300px;
+      overflow: auto;
+    }
+  }
+
   .preview-video {
     padding: 0 10px;
   }
@@ -86,8 +125,16 @@ export default {
     display: grid;
     grid-template-columns: 2fr 1fr;
   }
+
+  @media (max-width: 991px) {
+    .container-grid {
+      display: block;
+    }
+  }
+
   .section {
-    margin: 5% 10%;
+    margin: 50px 10%;
+    min-height: 100vh;
   }
 
   .card-video:hover {
@@ -109,9 +156,5 @@ export default {
     bottom  : 0;
     width   : 50%;  /* or 100px */
     border-bottom: 2px solid black;
-  }
-
-  .container-video {
-
   }
 </style>

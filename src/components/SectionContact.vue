@@ -45,7 +45,7 @@ export default {
   }
 
   .section {
-    margin: 5% 10%;
+    margin: 50px 10%;
   }
 
   .title {
@@ -63,5 +63,9 @@ export default {
     top: 15;
     width   : 50%;  /* or 100px */
     border-bottom: 2px solid black;
+  }
+
+  .section {
+    min-height: 100vh;
   }
 </style>

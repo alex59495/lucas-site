@@ -2,8 +2,7 @@
   <div class="title">
     {{video.name}}
   </div>
-  <iframe 
-    width="560" 
+  <iframe  
     height="315" 
     :src="video.url"
     :title="video.name" 
@@ -27,12 +26,18 @@ export default {
 </script>
 
 <style>
+
+  iframe {
+    width: 80%;
+  }
+
   .title {
     margin-bottom: 10px;
     font-weight: 600;
   }
 
   .description {
-    padding: 0 10px;
+    margin: 30px 20px;
+    font-style: italic;
   }
 </style>
