@@ -9,46 +9,39 @@
         <p>E-mail : <a href="mailto:Themis.prods@gmail.com">Themis.prods@gmail.com</a></p>
         <p>Phone : +33 6 04 67 25 40</p>
       </div>
-      <div class="contact-form">
-        <form 
-          action=”mailto:alexis59495@gmail.com”
-          method=”POST”
-          enctype=”multipart/form-data”
-          name=”EmailForm”>
-          Name:
-          <br>
-          <input type=”text” size=”19″ name=”ContactName”><br><br>
-          Message:
-          <br> 
-          <textarea name=”ContactCommentt” rows=”6″ cols=”20″></textarea>
-          <br>
-          <br> 
-          <button type=”submit”>Submit</button>
-        </form>
-      </div>
+      <ContactForm />
     </div>
   </div>
 </template>
 
 <script>
+import ContactForm from './ContactForm';
+
 export default {
   name: 'SectionContact',
   props: {
     title: String
+  },
+  components: {
+    ContactForm
   }
 }
 </script>
 
 
 <style scoped>
-  .container-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: left;
+
+  @media (min-width: 600px) {
+    .container-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      text-align: left;
+    }
   }
 
   .infos {
     border-bottom: 2px solid black;
+    height: fit-content;
   }
 
   .section {

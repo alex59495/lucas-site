@@ -1,50 +1,166 @@
 <template>
-  <div class="navbar nav-container">
-    <div class="navgrid-left">
-      <a href='#portfolio' class="title">Portfolio</a>
-      <a href='#about' class="title">About</a>
-      <a href='#contact' class="title">Contact</a>
-    </div>
-    <div class="navgrid-right">
-      <a href="https://www.youtube.com/channel/UCSc1J3qwIlSReB-Cf1D8R8A" target='_blank'><font-awesome-icon :icon="['fab', 'youtube']" /></a>
-      <a href="https://www.instagram.com/monochrome.lucas/" target='_blank'><font-awesome-icon :icon="['fab', 'instagram']" /></a>
-    </div>
-  </div>
+   <nav class="navbar">
+      <ul class="nav-menu grid-container">
+        <div class="grid-element">
+          <li class="nav-item">
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </div>
+        <div class="grid-element">
+          <li>
+            <a href="https://www.youtube.com/channel/UCSc1J3qwIlSReB-Cf1D8R8A" target='_blank' style='font-size: 28px; margin-right: 20px'><font-awesome-icon :icon="['fab', 'youtube']" /></a>
+            <a href="https://www.instagram.com/monochrome.lucas/" target='_blank' style='font-size: 28px'><font-awesome-icon :icon="['fab', 'instagram']" /></a>
+          </li>
+        </div>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
 </template>
+
+<script>
+window.onload = () => {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+  
+  hamburger.addEventListener("click", mobileMenu);
+  
+  function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+  }
+}
+</script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.nav-container {
-  display: grid;
-  grid-template-columns: 5fr 1fr;
-  grid-template-rows: auto;
+li {
+  list-style: none;
 }
 
-.navgrid-left {
-  display: flex;
-  justify-content: space-around;
+ul {
+  padding: 0;
 }
 
-.navgrid-right {
-  display: flex;
-  justify-content: space-around;
+a {
+  text-decoration: none;
+}
+
+.header{
+  border-bottom: 1px solid black;
 }
 
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
   background-color: black;
-  padding-top: 60px;
 }
 
 .navbar a {
   color: white;
-  text-decoration: none;
-  font-size: 26px;
 }
 
 .navbar a:hover {
-  text-shadow: 1px 1px 1px white;
-  text-decoration: none;
+  color: rgb(228, 228, 228);
+}
+
+.hamburger {
+  display: none;
+  margin: auto;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 5rem;
+}
+
+.nav-link{
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #475569;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  width: 100%;
+}
+
+.grid-element {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+  .nav-menu {
+    position: absolute;
+    left: -100%;
+    top: 1.5rem;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .grid-element, .grid-container {
+    display: block;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
 }
 
 </style>

@@ -13,7 +13,6 @@ import SectionAbout from './components/SectionAbout.vue';
 import SectionContact from './components/SectionContact.vue';
 import Navbar from './components/Navbar.vue';
 
-
 export default {
   name: 'App',
   components: {
@@ -27,6 +26,10 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

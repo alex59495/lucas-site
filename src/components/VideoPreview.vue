@@ -1,16 +1,15 @@
 <template>
   <div class="title">
-    {{video.name}} - Monchrome
+    {{video.name}}
   </div>
   <iframe 
-    frameborder="0" 
-    allowfullscreen="1" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    title="YouTube video player" 
-    width="100%" 
-    height="100%" 
+    width="560" 
+    height="315" 
     :src="video.url"
-    :alt="video.name"
+    :title="video.name" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen
   >
   </iframe>
   <div class="description">
@@ -20,7 +19,7 @@
 
 <script>
 export default {
-  name: 'Video',
+  name: 'VideoPreview',
   props: {
     video: Object
   }
@@ -30,5 +29,10 @@ export default {
 <style>
   .title {
     margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .description {
+    padding: 0 10px;
   }
 </style>
