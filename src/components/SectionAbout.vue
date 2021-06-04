@@ -5,6 +5,7 @@
     </div>
     <div class="text-about">
       <p>Hi ! I run this production & mixing facility from Rio de Janeiro, Brazil. My goal is to provide the highest level of musical quality to those seeking it in France, Brazil and elsewhere.</p>
+      <img :src="require('@/assets/lucas.jpg')" alt="Lucas De Oliveira">
       <div class="skills-list">
         <div class="skill" v-for="(skill, index) in skills" :key=skill.name v-on:click="updateSelectedSkill(index)">
           <font-awesome-icon :icon="['fas', skill.icon]" style='font-size: 18px;' class='icon' />
@@ -117,6 +118,14 @@ export default {
   .text-about {
     text-align: left;
     font-size: 14px;
+  }
+
+  .text-about img {
+    display: block;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
   }
 
   .section {

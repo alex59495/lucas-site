@@ -3,13 +3,13 @@
       <ul class="nav-menu grid-container">
         <div class="grid-element">
           <li class="nav-item">
-            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a v-on:click="scrollTo('portfolio')" class="nav-link">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a href="#about" class="nav-link">About</a>
+            <a v-on:click="scrollTo('about')" class="nav-link">About</a>
           </li>
           <li class="nav-item">
-            <a href="#contact" class="nav-link">Contact</a>
+            <a v-on:click="scrollTo('contact')" class="nav-link">Contact</a>
           </li>
         </div>
         <div class="grid-element">
@@ -39,11 +39,25 @@ window.onload = () => {
       navMenu.classList.toggle("active");
   }
 }
+
+export default {
+  name: 'Navbar',
+  methods: {
+    scrollTo(elementId) {
+      const element = document.getElementById(elementId)
+      element.scrollIntoView({behavior: 'smooth'})
+    },
+  }
+}
 </script>
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+body {
+  scroll-behavior: smooth;
+}
 
 li {
   list-style: none;
@@ -55,6 +69,10 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+li.nav-item a:hover { 
+  cursor: pointer;
 }
 
 .header{

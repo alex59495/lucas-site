@@ -8,6 +8,7 @@
         v-model="name"
         name="name"
         placeholder="Your Name"
+        required
       >
       <label>Email</label>
       <input 
@@ -15,13 +16,16 @@
         v-model="email"
         name="email"
         placeholder="Your Email"
+        required
         >
       <label>Message</label>
       <textarea 
         name="message"
         v-model="message"
         cols="30" rows="5"
-        placeholder="Message">
+        placeholder="Message"
+        required
+      >
       </textarea>
       <input type="submit" value="Send">
     </form>
@@ -43,21 +47,26 @@ export default {
   methods: {
     sendEmail(e) {
       try {
-        emailjs.sendForm('service_6we79ta', 'template_h4vfrzi', e.target,
-        'user_phzJCiWC2OOWnKP4RZom0', {
+        emailjs.sendForm('service_leoxrrq', 'template_lz3pg2s', e.target,
+        'user_xyWGBw5pWvq2X4GvEo5DU', {
           name: this.name,
           email: this.email,
           message: this.message
-        })
-
+        }).then(() => this.messageSent())
       } catch(error) {
-          console.log({error})
+          this.messageError()
       }
       // Reset form field
       this.name = ''
       this.email = ''
       this.message = ''
     },
+    messageSent() {
+      this.$swal('Your message was sent to Themis Production, thanks !');
+    },
+    messageError() {
+      this.$swal('An error occurred, please try to resend an email !');
+    }
   }
 }
 </script>

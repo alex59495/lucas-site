@@ -27,7 +27,7 @@ export default {
 
   .preview-skill {
     text-align: center;
-    height: 50vh;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
