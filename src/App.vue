@@ -8,9 +8,9 @@
 
 <script>
 import Banner from './components/Banner.vue';
-import SectionPortfolio from './components/SectionPortfolio.vue';
-import SectionAbout from './components/SectionAbout.vue';
-import SectionContact from './components/SectionContact.vue';
+import SectionPortfolio from './components/Sections/SectionPortfolio.vue';
+import SectionAbout from './components/Sections/SectionAbout.vue';
+import SectionContact from './components/Sections/SectionContact.vue';
 import Navbar from './components/Navbar.vue';
 
 export default {
