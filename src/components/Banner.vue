@@ -68,7 +68,7 @@
 
   @media(max-width: 750px) {
     .banner {
-      display: block;
+      flex-direction: column;
     }
   }
 

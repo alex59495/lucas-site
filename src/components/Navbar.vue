@@ -114,6 +114,8 @@ li.nav-item a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 15;
+  padding-bottom: 8px;
 }
 
 .nav-item {
