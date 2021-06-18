@@ -21,6 +21,20 @@ export default {
     SectionAbout,
     SectionContact,
     Navbar
+  },
+   metaInfo() {
+    return { 
+      title: "Themis Production by Lucas De Oliveira",
+      meta: [
+          { name: 'description', content:  'Themis Production by Lucas De Oliveira.'},
+          { property: 'og:title', content: "Themis Production by Lucas De Oliveira"},
+          { property: 'og:site_name', content: 'Themis Production'},
+          { property: 'og:type', content: 'website' },
+          { property: 'og:image', content: '/assets/img/themis-prod.png'},
+          { property: 'og:type', content: 'website' },
+          { name: 'robots', content: 'index,follow' } 
+      ]
+    }
   }
 }
 </script>
