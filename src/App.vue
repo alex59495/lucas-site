@@ -21,7 +21,7 @@ export default {
     SectionAbout,
     SectionContact,
     Navbar
-  }
+  },
 }
 </script>
 
