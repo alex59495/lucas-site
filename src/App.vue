@@ -25,6 +25,9 @@ export default {
    metaInfo() {
     return { 
       title: "Themis Production",
+      link: [
+      { rel: 'icon', href: require('@/assets/img/flavicon.png') }
+      ],
       meta: [
           { property: 'og:description', content: 'Themis Production by Lucas De Oliveira.'},
           { property: 'og:title', content: "Themis Production"},
