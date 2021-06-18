@@ -24,13 +24,13 @@ export default {
   },
    metaInfo() {
     return { 
-      title: "Themis Production by Lucas De Oliveira",
+      title: "Themis Production",
       meta: [
-          { name: 'description', content:  'Themis Production by Lucas De Oliveira.'},
-          { property: 'og:title', content: "Themis Production by Lucas De Oliveira"},
+          { property: 'og:description', content: 'Themis Production by Lucas De Oliveira.'},
+          { property: 'og:title', content: "Themis Production"},
           { property: 'og:site_name', content: 'Themis Production'},
           { property: 'og:type', content: 'website' },
-          { property: 'og:image', content: '/assets/img/themis-prod.png'},
+          { property: 'og:image', content: require('@/assets/img/themis-prod.png')},
           { property: 'og:type', content: 'website' },
           { name: 'robots', content: 'index,follow' } 
       ]
