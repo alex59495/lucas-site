@@ -11,16 +11,12 @@
         <Mp3Preview :mp3="content"/>
       </div>
       <div class="list">
-        <div class="musics">My musics</div>
         <div class="video-list">
           <div class="card-video" v-for="(content, index) in contents" :key="content.url" v-on:click=updateContentPreview(index)>
             <img :src="require('@/assets/img/' + content.image)" :alt="content.image">
             <div class="video-content">
               <div class="video-title">
                 {{content.name}}
-              </div>
-              <div class="video-description">
-                {{content.description}}
               </div>
             </div>
           </div>
@@ -50,7 +46,7 @@ export default {
       contents: [
         {type: 'mp3', url: 'cardinal_sin.wav', image: 'district7.jpg', name: 'Cardinal Sin - Versailles', description: ''},
         {type: 'mp3', url: 'the_place_we_used_to_called_home.wav', image: 'district7.jpg', name: 'The place we used to call home - District 7', description: 'Mixed and mastered by Lucas De Oliveira at Themis Productions. This track is used with permission by District 7and URM Academy. The original production was done by Vasco Ramos, mix was done by Marco Cipriano. This new mix is an unofficial version and not on the actual release'},
-        {type: 'video', url: 'https://www.youtube.com/embed/pedqe2ZXB0A', image: 'casteway.jpg', name: 'Casteway - Monochrome', description: 'Composed, produced, recorded, mixed and mastered by Lucas De Oliveira at Themis Productions'},
+        {type: 'video', url: 'https://www.youtube.com/embed/pedqe2ZXB0A', image: 'castaway.jpg', name: 'Castaway - Monochrome', description: 'Composed, produced, recorded, mixed and mastered by Lucas De Oliveira at Themis Productions'},
         {type: 'video', url: 'https://www.youtube.com/embed/YkUQ-UShRhE', image: 'sidebyside.jpg', name: 'Side By Side - Monochrome', description: `Composed, produced and recorded by Lucas De Oliveira at Themis Productions \n Mixed and mastered by Romain Saule at 90 Reasons Music Production`},
         {type: 'video', url: 'https://www.youtube.com/embed/n3xCSELdbn0', image: 'leona.jpg', name: 'Leona - Monochrome', description: 'Composed, produced, recorded, mixed and mastered by Lucas De Oliveira at Themis Productions'},
         {type: 'video', url: 'https://www.youtube.com/embed/fnNJHQT00-U', image: 'basement.jpg', name: 'Basement Girasol - Monochrome', description: ''},
@@ -103,7 +99,7 @@ export default {
   }
 
   .video-list {
-    max-height: 500px;
+    max-height: 800px;
     overflow: auto;
   }
 
@@ -116,6 +112,7 @@ export default {
 
   .preview-video, .preview-mp3 {
     padding: 0 10px;
+    margin-top: 5%;
   }
 
   .card-video {

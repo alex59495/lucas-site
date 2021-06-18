@@ -5,7 +5,6 @@
     </div>
     <div class="text-about">
       <p>Hi ! I run this production & mixing facility from Rio de Janeiro, Brazil. My goal is to provide the highest level of musical quality to those seeking it in France, Brazil and elsewhere.</p>
-      <img :src="require('@/assets/img/lucas.jpg')" alt="Lucas De Oliveira">
       <div class="skills-list">
         <div class="skill" v-for="(skill, index) in skills" :key=skill.name v-on:click="updateSelectedSkill(index)">
           <font-awesome-icon :icon="['fas', skill.icon]" style='font-size: 18px;' class='icon' />
@@ -16,8 +15,6 @@
       </div>
       <SkillPreview :skill="skill" />
     </div>
-    <p>-</p>
-    <p class='bold-700'>Lucas De Oliveira</p>
   </div>
 </template>
 
@@ -104,7 +101,6 @@ export default {
     padding: 8px;
     margin: 10px;
     background-color: black;
-    box-shadow: 2px 2px 10px white;
     border-radius: 8px;
     transition: all 0.8s;
   }
@@ -113,21 +109,12 @@ export default {
     cursor: pointer;
     border-radius: 8px;
     background-color: white;
-    box-shadow: 2px 2px 10px rgb(155, 155, 155);
     color: black;
   }
 
   .text-about {
     text-align: left;
     font-size: 14px;
-  }
-
-  .text-about img {
-    display: block;
-    margin: auto;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
   }
 
   .section {

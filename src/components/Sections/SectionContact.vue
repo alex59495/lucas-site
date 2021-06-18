@@ -8,6 +8,7 @@
         <p>Lucas De Oliveira</p>
         <p>E-mail : <a href="mailto:Themis.prods@gmail.com">Themis.prods@gmail.com</a></p>
         <p>Phone : +33 6 04 67 25 40</p>
+        <img :src="require('@/assets/img/lucas.jpg')" alt="Lucas De Oliveira">
       </div>
       <ContactForm />
     </div>
@@ -41,7 +42,18 @@ export default {
 
   .infos {
     border-bottom: 2px solid black;
-    height: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .infos img {
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15%;
   }
 
   .section {
